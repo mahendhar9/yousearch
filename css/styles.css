@@ -1,11 +1,17 @@
+body {
+  font-family: 'PT Sans', sans-serif;
+  font-size: 17px;
+  color: #615E5E;
+}
 .search-row {
   margin-top: 12vh;
 }
 
 h2 {
   font-family: 'Pacifico', cursive;
-  font-color: #777;
+  color: #444;
   text-align: center;
+
 }
 
 form {
@@ -17,5 +23,33 @@ form {
   margin:0 auto;
   padding: 16px 7px;
   display: inline-block;
+  font-size: 16px;
+  letter-spacing: 1px;
 }
 
+.results-row {
+  /*height: 50vh;*/
+  margin-top: 20px;
+}
+
+#results {
+  /*border: 1px solid #777;*/
+  margin: 30px;
+}
+
+#results img {
+  width: 100%;
+}
+
+#results h3 {
+  font-size: 1.5em;
+  color: #444;
+}
+
+.channel-meta {
+  font-size: 15px;
+}
+
+.channel-meta i {
+  color:#444;
+}
