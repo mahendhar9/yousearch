@@ -1,0 +1,21 @@
+.search-row {
+  margin-top: 12vh;
+}
+
+h2 {
+  font-family: 'Pacifico', cursive;
+  font-color: #777;
+  text-align: center;
+}
+
+form {
+  text-align: center;
+}
+
+#input-search {
+  width: 30%;
+  margin:0 auto;
+  padding: 16px 7px;
+  display: inline-block;
+}
+
