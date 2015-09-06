@@ -1,5 +1,8 @@
 $(document).ready(function(){
 
+  //FancyBox
+  $('.fancybox').fancybox();
+
   // Focus
   $('#input-search').focus(function(){
     $(this).animate({
@@ -11,7 +14,7 @@ $(document).ready(function(){
   $('#input-search').blur(function(){
     if ($(this).val() == '') {
       $(this).animate({
-        width: '30%'
+        width: '40%'
       },300);
     }
   });
@@ -50,30 +53,30 @@ function search() {
       var buttons = getButtons(prevPageToken, nextPageToken);
       $('#buttons').append(buttons);
     });
-  }
+}
 
-  function getOutput(item){
-    var videoId = item.id.videoId;
-    var title = item.snippet.title;
-    var description = item.snippet.description;
-    var thumbnail = item.snippet.thumbnails.high.url;
-    var channelTitle = item.snippet.channelTitle;
-    var publishedAt = item.snippet.publishedAt;
+function getOutput(item){
+  var videoId = item.id.videoId;
+  var title = item.snippet.title;
+  var description = item.snippet.description;
+  var thumbnail = item.snippet.thumbnails.high.url;
+  var channelTitle = item.snippet.channelTitle;
+  var publishedAt = item.snippet.publishedAt;
 
-    var getoutput = '<div class="row results-row">' +
-            '<div class="col-md-4">' +
-            '<img src="'+thumbnail+'">' +
-            '</div>' +
-            '<div class="col-md-8">' +
-            '<h3>'+title+'</h3>' +
-            '<p class="channel-meta">By<i> '+channelTitle+'</i> on '+publishedAt+'</p>'+
-            '<p>'+description+'</p>' +
-            '</div>' + 
-            '</div>' +
-            '<hr>'
+  var getoutput = '<div class="row results-row">' +
+  '<div class="col-md-4">' +
+  '<a class="fancybox fancybox.iframe" href="http://www.youtube.com/embed/'+videoId+'"><img src="'+thumbnail+'"></a>' +
+  '</div>' +
+  '<div class="col-md-8">' +
+  '<h3><a class="fancybox fancybox.iframe" href="http://www.youtube.com/embed/'+videoId+'">'+title+'</a></h3>' +
+  '<p class="channel-meta">By<i> '+channelTitle+'</i> on '+publishedAt+'</p>'+
+  '<p>'+description+'</p>' +
+  '</div>' + 
+  '</div>' +
+  '<hr>'
 
-    return getoutput;       
-  }
+  return getoutput;       
+}
 
 function getButtons(prevPageToken, nextPageToken){
   if (!prevPageToken){
@@ -90,7 +93,7 @@ function getButtons(prevPageToken, nextPageToken){
 function nextPage(){
   var token = $('#next-button').data('token'); 
   var query = $('#next-button').data('query');
- 
+
   $('#results').html('');
   $('#buttons').html('');
 
@@ -116,12 +119,12 @@ function nextPage(){
       $('#buttons').append(buttons);
     });
   
-  }
+}
 
 function prevPage(){
   var token = $('#prev-button').data('token'); 
   var query = $('#prev-button').data('query');
- 
+
   $('#results').html('');
   $('#buttons').html('');
 
@@ -145,6 +148,5 @@ function prevPage(){
 
       var buttons = getButtons(prevPageToken, nextPageToken);
       $('#buttons').append(buttons);
-    });
-  
-  }
+    });  
+}
