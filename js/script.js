@@ -6,7 +6,7 @@ $(document).ready(function(){
   // Focus
   $('#input-search').focus(function(){
     $(this).animate({
-      width: '63%'
+      width: '65%'
     },300);
   });
 
